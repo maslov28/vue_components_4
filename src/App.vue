@@ -9,12 +9,6 @@
     :columns="columns"
     :dataSource="dataSource"
   >
-    <template #header="slotProps">
-      {{slotProps.nameColumn}}
-    </template>
-    
-  
-
   </app-table>
 
 </template>

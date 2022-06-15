@@ -5,12 +5,12 @@
         v-for="column in columns" 
         :key="column.key" 
       >
-        <slot :nameColumn="column.name" name="header"></slot>
+        {{ column.name }}
       </th>
     </tr>
     <tr v-for="person in dataSource" :key="person.id">
       <td v-for="column in columns" :key="column.key">
-        <slot v-if="column.slot" :name="column.slot"></slot>
+        <img :src="person[column.key]" v-if="column.key === 'avatar'">
         <span v-else>{{person[column.key]}}</span>
       </td>
     </tr>
