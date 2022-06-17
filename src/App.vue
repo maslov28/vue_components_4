@@ -9,12 +9,23 @@
     :columns="columns"
     :dataSource="dataSource"
   >
-    <template #header="slotProps">
-      {{slotProps.nameColumn}}
+
+    <template #header="{ nameColumn}">
+      {{ nameColumn }}
     </template>
     
-  
+    <template #name="{ item }">
+      <span v-if="item">{{ item }}</span>
+    </template>
 
+    <template #age="{ item }">
+      <span v-if="item">{{ item }}</span>
+    </template>
+
+    <template #avatar="{ item }">
+      <img :src="item" v-if="item">
+    </template>
+  
   </app-table>
 
 </template>
@@ -50,6 +61,12 @@ export default {
         name: 'John',
         age: 27,
         avatar: 'https://www.meme-arsenal.com/memes/43c9c30bdd5378c3555ce700cad6637f.jpg'
+      },
+       {
+        id: 2,
+        name: 'Peter',
+        age: 30,
+        avatar: 'https://www.meme-arsenal.com/memes/43c9c30bdd5378c3555ce700cad6637f.jpg'
       }
     ])
 
@@ -63,7 +80,3 @@ export default {
   components: {AppButton, AppTable}
 }
 </script>
-
-<style>
-
-</style>

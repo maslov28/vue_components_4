@@ -10,8 +10,9 @@
     </tr>
     <tr v-for="person in dataSource" :key="person.id">
       <td v-for="column in columns" :key="column.key">
-        <slot v-if="column.slot" :name="column.slot"></slot>
-        <span v-else>{{person[column.key]}}</span>
+        <slot :name="column.key" :item="person[column.key]">
+          {{ column.slot }}
+        </slot>
       </td>
     </tr>
   </table>
@@ -26,7 +27,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>
