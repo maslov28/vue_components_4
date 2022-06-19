@@ -10,7 +10,7 @@
     </tr>
     <tr v-for="person in dataSource" :key="person.id">
       <td v-for="column in columns" :key="column.key">
-        <slot :name="column.key" :item="person[column.key]">
+        <slot :name="column.key" :item="person">
           {{ column.slot }}
         </slot>
       </td>

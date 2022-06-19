@@ -10,20 +10,20 @@
     :dataSource="dataSource"
   >
 
-    <template #header="{ nameColumn}">
+    <template #header="{ nameColumn }">
       {{ nameColumn }}
     </template>
     
     <template #name="{ item }">
-      <span v-if="item">{{ item }}</span>
+      <span v-if="item">{{ item.name }}</span>
     </template>
 
     <template #age="{ item }">
-      <span v-if="item">{{ item }}</span>
+      <span v-if="item">{{ item.age }}</span>
     </template>
 
     <template #avatar="{ item }">
-      <img :src="item" v-if="item">
+      <img v-if="item" :src="item.avatar">
     </template>
   
   </app-table>
